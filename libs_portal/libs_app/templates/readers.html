@@ -3,5 +3,74 @@
 {% load static %}
 
 {% block main_content %}
-<h1>readers</h1>
+
+<div class="container-flex text-center justify-content-center align-items-center" style="padding-top: 10px; padding-bottom: 20px; margin: 10px; vertical-align: middle;">
+    <div class="row justify-content-center align-middle" style="margin-top: 10px; height: 60px;">
+        <div class="col-md-4 text-light" style="background-color: #0d6efd;">
+            <h4 style="margin-top: 15px;">Register new reader</h4>
+        </div>
+        <div class="col-md-8">
+            <h4>Search readers</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+          <div class="container" style="overflow-y: auto; height: 600px; background-color: lavender;">
+            <form class="d-flex" action="#" method="POST">
+                {% csrf_token %}
+                <table class="table" style="margin-top: 20px;">
+                <tr>
+                    <td style="text-align: left; vertical-align: middle;padding-left: 15px;">Name : </td>
+                    <td><input type="text" class="form-control" name="reader_name"></td>
+                </tr>
+                <tr>
+                    <td style="text-align: left; vertical-align: middle;padding-left: 15px;">Contact : </td>
+                    <td><input type="text" class="form-control" name="reader_contact"></td>
+                </tr>
+                <tr>
+                    <td style="text-align: left; vertical-align: middle;padding-left: 15px;">Reference ID : </td>
+                    <td><input type="text" class="form-control" name="reader_ref_id"></td>
+                </tr>
+                <tr>
+                    <td style="text-align: left; vertical-align: middle;padding-left: 15px;">Address : </td>
+                    <td><textarea type="text" class="form-control" name="reader_contact"></textarea></td>
+                </tr>
+
+                <tr>
+                    <td colspan="2"><button class="btn btn-primary" type="submit">Save</button></td>
+                </tr>
+                </table>
+            </form>
+            <ul style="text-align: left; vertical-align: middle; padding-left: 15px;">
+                <li><small>Readers should not register multiple times</small></li>
+                <li><small>Duolicate readers will be deactivated</small></li>
+                <li><small>Contact information must be correct</small></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-8">
+            <div class="row">
+                <nav class="navbar bg-body-light">
+                    <div class="container-fluid justify-content-center align-items-center">
+                        <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-primary" type="submit">Search</button>
+                          </form>
+                    </div>
+                </nav>
+            </div>
+            <div class="row" style="margin-top: 20px;">
+                <p>{{ readers|length }} readers subscribed.</p>
+            </div>
+            
+            <!-- Additional content to display readers if needed -->
+            {% for reader in readers %}
+                <p>{{ reader.name }} - {{ reader.email }}</p>
+            {% empty %}
+                <p>No readers found.</p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
 {% endblock %}

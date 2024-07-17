@@ -5,7 +5,7 @@ from django.shortcuts import render,redirect
 
 
 # Create your views here.
-
+from .models import *
 
 def home(request):
     return render(request, 'home.html',context={'current_tab': 'home'})
@@ -29,3 +29,7 @@ def shop(request):
 def save_student(request):
     student_name = request.POST['student_name']
     return render(request, 'welcome.html', context={'student_name':student_name})
+
+def readers_tab(request):
+    readers = Reader.objects.all()  # Ensure the model name is correct
+    return render(request, "readers.html", context={"current_tab": "readers", "readers": readers})
