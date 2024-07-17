@@ -1,0 +1,20 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Information Managment</title>
+</head>
+<body>
+    <h1>Welcome to your library</h1>
+    <form method="POST" action="/save">
+        {% csrf_token %}
+        <label style="color: red; font-size: 18px;">Student name</label>
+        <input type="text" name="student_name">
+        <label style="color: red; font-size: 18px;">Student age</label>
+        <input type="text" name="student_name">
+        <button type="submit" style="font-size: 18px; display: block; margin-top: 15px; margin-bottom: 15px;">Save</button>
+    </form>
+    <a href="/shop">Shop</a>
+
+</body>
+</html>

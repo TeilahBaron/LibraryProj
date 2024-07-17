@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% extends "index.html" %}
+{% load static %}
+
+{% block main_content %}
+<div class="jumbotron">
+    <div class="container">
+        <img src="{% static 'LIBS_LOGO.png' %}" class="rounded float-start" alt="LIBS" height="200" style="margin-right: 10px;">
+      <h1 class="display-4">Hello book lovers</h1>
+      <p>Welcome to the Library Portal, your one-stop destination for managing all your library needs. Whether you're an avid reader, a dedicated student, or simply someone who loves to explore new books, our portal offers a seamless experience for browsing, borrowing, and returning books. With an extensive collection of literature spanning various genres, we ensure that there's something for everyone. </p>
+      <p><button type="button" class="btn btn-primary">Browes collection</button></p>
+    </div>
+</div>
+
+<div class="container ">
+    <div class="row">
+      <div class="col">
+        <h2>Reading is important</h2>
+        <p>Reading is important because it enriches our minds, broadens our perspectives, and enhances our understanding of the world. It improves vocabulary, critical thinking, and empathy by exposing us to different ideas and experiences. Reading also reduces stress, stimulates mental health, and fosters lifelong learning, making it an essential habit for personal and intellectual growth.</p>
+      </div>
+      <div class="col">
+        <h2>5 key benefits of reading</h2>
+        <p>
+           <li>Knowledge and Learning**: Reading expands your knowledge and understanding of various subjects and topics.</li>
+           <li>Vocabulary and Language Skills: Regular reading improves vocabulary, language skills, and comprehension.</li>
+           <li>Stress Reduction: Immersing in a good book can reduce stress and provide a mental escape.</li>
+           <li>Critical Thinking and Analytical Skills: Reading complex texts enhances critical thinking and analytical skills.</li>
+           <li>Empathy and Emotional Intelligence: Reading fiction and exploring different characters and viewpoints can increase empathy and emotional intelligence.</li></p>
+      </div>
+      <div class="col">
+        <h2>Quote of the day</h2>
+        <p>"Today a reader, tomorrow a leader." - Margaret Fuller
+
+            This quote emphasizes how reading can empower individuals to become leaders by fostering knowledge, insight, and critical thinking skills.</p>
+      </div>
+    </div>
+  </div>
+  <footer class="container">
+    <p>Libra 2024</p>
+  </footer>
+{% endblock %}
