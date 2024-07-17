@@ -23,7 +23,7 @@ urlpatterns = [
     path('books/', views.books, name='books'),
     path('mybooks/', views.mybooks, name='mybooks'),
     path('returns/', views.returns, name='returns'),
-    path('shop/', views.shop, name='shop'),
     path('save/', views.save_student, name='save_student'),
+    path('save_reader/', views.save_reader, name='save_reader'),
     # Other paths
 ]

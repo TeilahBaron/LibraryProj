@@ -33,3 +33,12 @@ def save_student(request):
 def readers_tab(request):
     readers = Reader.objects.all()  # Ensure the model name is correct
     return render(request, "readers.html", context={"current_tab": "readers", "readers": readers})
+
+def save_reader(request):
+    reader_item = Reader(reference_id=request.POST.get('reader_ref_id'),
+                         reader_name=request.POST.get('reader_name'),
+                         reader_contact=request.POST.get('reader_contact'),
+                         reader_address=request.POST.get('reader_address'),
+                         active=True)
+    reader_item.save()
+    return redirect('readers')
