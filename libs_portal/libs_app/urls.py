@@ -20,10 +20,11 @@ from . import views  # Import views from the current app
 urlpatterns = [
     path('home/', views.home, name='home'),
     path('readers/', views.readers_tab, name='readers'),
-    path('books/', views.books, name='books'),
+    path('books/', views.books_tab, name='books'),
     path('mybooks/', views.mybooks, name='mybooks'),
     path('returns/', views.returns, name='returns'),
     path('save/', views.save_student, name='save_student'),
     path('save_reader/', views.save_reader, name='save_reader'),
+    path('add_book/', views.save_book, name='save_book'),
     # Other paths
 ]

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% extends "index.html" %}
+{% load static %}
+
+{% block main_content %}
+
+<div class="container">
+    <h2>Add New Book</h2>
+    <form method="post" action="{% url 'save_book' %}">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" class="form-control" id="title" name="title">
+        </div>
+        <div class="form-group">
+            <label for="author">Author:</label>
+            <input type="text" class="form-control" id="author" name="author">
+        </div>
+        <div class="form-group">
+            <label for="isbn">ISBN:</label>
+            <input type="text" class="form-control" id="isbn" name="isbn">
+        </div>
+        <div class="form-group">
+            <label for="genre">Genre:</label>
+            <input type="text" class="form-control" id="genre" name="genre">
+        </div>
+        <div class="form-group">
+            <label for="published_year">Published Year:</label>
+            <input type="number" class="form-control" id="published_year" name="published_year">
+        </div>
+        <div class="form-group">
+            <label for="copies_available">Copies Available:</label>
+            <input type="number" class="form-control" id="copies_available" name="copies_available" value="1">
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+</div>
+
+{% endblock %}

@@ -1,7 +1,39 @@
-<!DOCTYPE html>
-{% extends "index.html" %}
-{% load static %}
+<!-- libs_app/templates/mybooks.html -->
 
-{% block main_content %}
-<h1>Book Page</h1>
+{% extends "index.html" %}  <!-- Extend from your base template -->
+
+{% block title %}My Books{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mt-4 mb-4">My Books</h1>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>ISBN</th>
+                        <!-- Add more columns as per your model -->
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for book in user_books %}
+                    <tr>
+                        <td>{{ book.title }}</td>
+                        <td>{{ book.author }}</td>
+                        <td>{{ book.isbn }}</td>
+                        <!-- Add more fields as per your model -->
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="3">You haven't borrowed any books yet.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 {% endblock %}
